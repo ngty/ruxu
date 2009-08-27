@@ -8,16 +8,20 @@ describe Ruxu::JavascriptRuntimeError do
     Ruxu::JavascriptRuntimeError
   end
 
+  def send(cmd)
+    @runner.send(cmd)
+  end
+
   it 'should not be raised for valid javascript' do
-    lambda { runner.send('var xyz = 123') }.should_not raise_error(error)
+    lambda { send('var xyz = 123') }.should_not raise_error(error)
   end
 
   it 'should be raised upon javascript syntax error' do
-    lambda { runner.send('function() {') }.should raise_error(error, /SyntaxError:/)
+    lambda { send('function() {') }.should raise_error(error, /SyntaxError:/)
   end
 
   it 'should be raised upon javascript reference error' do
-    lambda { runner.send('invalid.test()') }.should raise_error(error, /ReferenceError:/)
+    lambda { send('invalid.test()') }.should raise_error(error, /ReferenceError:/)
   end
 
 end
