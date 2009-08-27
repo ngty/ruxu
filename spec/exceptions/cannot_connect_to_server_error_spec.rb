@@ -16,8 +16,7 @@ describe Ruxu::CannotConnectToServerError do
   end
 
   after(:each) do
-    @runner.close if @runner
-    sleep 1
+    @runner.close_all if @runner
   end
 
   it 'should not be raised for all valid args' do
