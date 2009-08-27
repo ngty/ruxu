@@ -1,4 +1,4 @@
 module Ruxu
-  class CannotConnectToServer < Exception ; end
+  class CannotConnectToServerError < Exception ; end
   class JavascriptRuntimeError   < Exception ; end
 end

@@ -18,7 +18,7 @@ module Ruxu
         @server.start if no_of_tries < 1
         no_of_tries += 1
         retry if no_of_tries < max_tries
-        raise CannotConnectToServer
+        raise CannotConnectToServerError
       end
     end
 
