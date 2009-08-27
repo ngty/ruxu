@@ -12,7 +12,7 @@ module Ruxu
       @connection.start
     end
 
-    def open(location)
+    def open_page(location)
       send(%\ruxu.open_page("#{location}")\)
       sleep 0.5
       if send('ruxu.page.document.title') =~ /Problem loading page/

@@ -10,7 +10,7 @@ describe Ruxu::CannotOpenDocumentError do
 
   def open(file)
     dir = File.expand_path(File.dirname(__FILE__))
-    @runner.open('file://' + File.join(dir, '..', 'fixtures', file))
+    @runner.open_page('file://' + File.join(dir, '..', 'fixtures', file))
   end
 
   after(:each) do
