@@ -23,9 +23,14 @@ module Ruxu
     end
 
     def close
-      send('window.opener.close()')
+      send('ruxu.close_page()')
+      sleep 1
+    end
+
+    def close_all
+      send('ruxu.close_all()')
       @socket.close
-      sleep 0.5
+      sleep 1
     end
 
     def send(cmd)
