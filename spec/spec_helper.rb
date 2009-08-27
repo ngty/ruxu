@@ -19,11 +19,7 @@ describe 'standard setup', :shared => true do
   end
 
   after(:all) do
-    @runner.close
-  end
-
-  def runner
-    @runner
+    @runner.close_all
   end
 
 end
